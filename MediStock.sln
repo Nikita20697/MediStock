@@ -34,19 +34,4 @@ Global
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BF1D75A5-1D6F-4CB3-9B8A-994CF517342E}
 	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 4
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://dev.azure.com/rajpawar
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = BAL\\BAL.csproj
-		SccProjectName1 = BAL
-		SccLocalPath1 = BAL
-		SccProjectUniqueName2 = DAL\\DAL.csproj
-		SccProjectName2 = DAL
-		SccLocalPath2 = DAL
-		SccProjectUniqueName3 = MediStock\\MediStockWeb.csproj
-		SccProjectName3 = MediStock
-		SccLocalPath3 = MediStock
-	EndGlobalSection
 EndGlobal
