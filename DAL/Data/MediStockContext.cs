@@ -1,4 +1,5 @@
 ﻿using DAL.Domains;
+using DAL.Domains.Base;
 using DAL.Mappings;
 using Microsoft.EntityFrameworkCore;
 
@@ -24,6 +25,7 @@ namespace DAL.Data
         public DbSet<Log> Logs { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<OrderItemNew> OrderItemsNew { get; set; }
         public DbSet<Picture> Pictures { get; set; }
         public DbSet<Medicine> Medicines { get; set; }
         public DbSet<Stock> Stock { get; set; }
@@ -137,10 +139,13 @@ namespace DAL.Data
             #region OrderItems & Cart
 
             modelBuilder.Entity<OrderItem>()
-                .ToTable("OrderItems")
-                .HasOne<Cart>(x => x.Cart)
-                .WithMany(x => x.OrderItems)
-                .HasForeignKey(x => x.Id);
+                .ToTable("OrderItems");
+
+            modelBuilder.Entity<OrderItemNew>()
+                .ToTable("OrderItemsNew");
+            //.HasOne<Cart>(x => x.Cart)
+            //.WithMany(x => x.OrderItems)
+            //.HasForeignKey(x => x.Id);
 
             #endregion
 

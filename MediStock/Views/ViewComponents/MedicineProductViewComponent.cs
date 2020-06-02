@@ -30,6 +30,7 @@ namespace MediStockWeb.Views.ViewComponents
             {
                 var model = new HomeModel
                 {
+                    MedicineId = item.Id,
                     ImageUrl = "/images/" + item.PictureStr,
                     Name = item.Name,
                     Price = item.Price

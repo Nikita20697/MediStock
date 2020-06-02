@@ -20,7 +20,7 @@ namespace DAL.Domains
         public Stock Stock { get; set; }
 
         public string PictureStr { get; set; }
-
+        public string AllowedQuantities { get; set; }
         public string CategoryName { get; set; }
 
         public ICollection<CategoryMedicine> _categoryMedicine;

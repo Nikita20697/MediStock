@@ -1,5 +1,6 @@
 using BAL.Services;
 using DAL.Data;
+using DAL.Domains;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -50,9 +51,14 @@ namespace MediStockWeb
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IMedicineService, MedicineService>();
             services.AddScoped<IOrderService, OrderService>();
+           
 
-            
-
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped(sp => ShoppingCart.GetCart(sp));
+            services.AddScoped<ShoppingCart>();
+            services.AddMemoryCache();
+            services.AddSession();
+            services.AddMvc();
             // Configure context class
             services.AddDbContext<MediStockContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -87,6 +93,7 @@ namespace MediStockWeb
 
             app.UseRouting();
 
+            app.UseSession();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

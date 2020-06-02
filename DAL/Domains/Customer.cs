@@ -8,6 +8,8 @@ namespace DAL.Domains
 {
     public partial class Customer : BaseEntity
     {
+        private ICollection<Cart> _carts;
+
         [Required]
         public string FirstName { get; set; }
         [Required]
@@ -26,7 +28,13 @@ namespace DAL.Domains
         [Required]
         public Password Password { get; set; }
         public ICollection<CustomerRole> CustomerRoles { get; set; }
-       // public ICollection<CustomerPayment> CustomerPayments { get; set; }
+        // public ICollection<CustomerPayment> CustomerPayments { get; set; }
+        public virtual ICollection<Cart> Carts
+        {
+            get => _carts ?? (_carts = new List<Cart>());
+            protected set => _carts = value;
+        }
+
 
     }
 }

@@ -37,7 +37,7 @@ namespace MediStockWeb.Controllers
             //parameters.Add("CUST_ID", customerModel.CustomerId);
             parameters.Add("CUST_ID", "1");
             //parameters.Add("ORDER_ID", orderModel.OrderId);
-             parameters.Add("ORDER_ID", "ORD879631"); //OrderId must be unique everytime.
+             parameters.Add("ORDER_ID", "ORD87963663"); //OrderId must be unique everytime.
             parameters.Add("TXN_AMOUNT", requestData.Amount);
             parameters.Add("CALLBACK_URL", "https://localhost:44388/Payment/PaytmResponse");
            // parameters.Add("CALLBACK_URL", "url");//This parameter is not mandatory. Use this to pass the callback url dynamically.
